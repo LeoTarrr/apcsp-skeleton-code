@@ -33,9 +33,9 @@ def wikipedia_game_solver(start_page, target_page):
         if current_title == target_page.title:
             break
 
+        visited.append(current_title)
         current_page = wiki_wiki.page(current_title)
         next_level = fetch_links(current_page)
-        visited.append(current_title)
 
         for node in next_level:
             if node not in visited:
@@ -54,7 +54,7 @@ def wikipedia_game_solver(start_page, target_page):
     end_time = time.time()
     print(" This algorithm took ", end_time-start_time, " Seconds to run! ")
 
-    return path
+    
     # FINISH THE CODE HERE
 
     end_time = time.time()
